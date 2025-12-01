@@ -1,0 +1,3 @@
+AAA111,Car,Toyota,Corolla,2019
+BBB222,Minibus,Honda,Civic,2021
+CCC333,PickupTruck,Ford,Focus,2024

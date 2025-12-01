@@ -1,0 +1,284 @@
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+2
+Enter customer ID: 001
+Enter name: George
+Customer added successfully.
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+2
+Enter customer ID: 002
+Enter name: Anne
+Customer added successfully.
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+1
+  1: Car
+  2: Minibus
+  3: Pickup Truck
+1
+Enter license plate: AAA111
+Enter make: Toyota
+Enter model: Corolla
+Enter year: 2019
+Enter number of seats: 5
+Car added successfully.
+Vehicle added successfully.
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+1
+  1: Car
+  2: Minibus
+  3: Pickup Truck
+2
+Enter license plate: BBB222
+Enter make: Honda 
+Enter model: Civic
+Enter year: 2021
+Is accessible? (true/false): true
+Minibus added successfully.
+Vehicle added successfully.
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+1
+  1: Car
+  2: Minibus
+  3: Pickup Truck
+3
+Enter license plate: CCC333
+Enter make: Ford
+Enter model: Focus
+Enter year: 2024
+Enter the cargo size: 5.0
+Has trailer? (true/false): false
+Pickup Truck added successfully.
+Vehicle added successfully.
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+3
+
+=== Available Vehicles ===
+| Type            | Plate        | Make         | Model        | Year   | Status             |
+|--------------------------------------------------------------------------------------------|
+| Car             | AAA111       | Toyota       | Corolla      | 2019   | Available          |
+| Minibus         | BBB222       | Honda        | Civic        | 2021   | Available          |
+| Pickup Truck    | CCC333       | Ford         | Focus        | 2024   | Available          |
+
+Enter license plate: AAA111
+Registered Customers:
+  Customer ID: 1 | Name: George
+  Customer ID: 2 | Name: Anne
+Enter customer ID: 001
+Enter rental amount: 98.78
+Vehicle rented to George
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+3
+
+=== Available Vehicles ===
+| Type            | Plate        | Make         | Model        | Year   | Status             |
+|--------------------------------------------------------------------------------------------|
+| Minibus         | BBB222       | Honda        | Civic        | 2021   | Available          |
+| Pickup Truck    | CCC333       | Ford         | Focus        | 2024   | Available          |
+
+Enter license plate: CCC333
+Registered Customers:
+  Customer ID: 1 | Name: George
+  Customer ID: 2 | Name: Anne
+Enter customer ID: 002
+Enter rental amount: 140.75
+Vehicle rented to Anne
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+4
+
+=== Rented Vehicles ===
+| Type            | Plate        | Make         | Model        | Year   | Status             |
+|--------------------------------------------------------------------------------------------|
+| Car             | AAA111       | Toyota       | Corolla      | 2019   | Rented             |
+| Pickup Truck    | CCC333       | Ford         | Focus        | 2024   | Rented             |
+
+Enter license plate: AAA111
+Registered Customers:
+  Customer ID: 1 | Name: George
+  Customer ID: 2 | Name: Anne
+Enter customer ID: 001
+Enter any additional return fees: 0.00
+Vehicle returned by George
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+4
+
+=== Rented Vehicles ===
+| Type            | Plate        | Make         | Model        | Year   | Status             |
+|--------------------------------------------------------------------------------------------|
+| Pickup Truck    | CCC333       | Ford         | Focus        | 2024   | Rented             |
+
+Enter license plate: CCC333
+Registered Customers:
+  Customer ID: 1 | Name: George
+  Customer ID: 2 | Name: Anne
+Enter customer ID: 002
+Enter any additional return fees: 0.00
+Vehicle returned by Anne
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+5
+
+=== Available Vehicles ===
+| Type            | Plate        | Make         | Model        | Year   | Status             |
+|--------------------------------------------------------------------------------------------|
+| Car             | AAA111       | Toyota       | Corolla      | 2019   | Available          |
+| Minibus         | BBB222       | Honda        | Civic        | 2021   | Available          |
+| Pickup Truck    | CCC333       | Ford         | Focus        | 2024   | Available          |
+
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+5
+
+=== Available Vehicles ===
+| Type            | Plate        | Make         | Model        | Year   | Status             |
+|--------------------------------------------------------------------------------------------|
+| Car             | AAA111       | Toyota       | Corolla      | 2019   | Available          |
+| Minibus         | BBB222       | Honda        | Civic        | 2021   | Available          |
+| Pickup Truck    | CCC333       | Ford         | Focus        | 2024   | Available          |
+
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+6
+| Type      | Plate        | Customer             | Date         | Amount       |
+|-------------------------------------------------------------------------------|
+| RENT      | AAA111       | George               | 2025-12-01   | $98.78       |
+| RENT      | CCC333       | Anne                 | 2025-12-01   | $140.75      |
+| RENT      | AAA111       | George               | 2025-12-01   | $0.00        |
+| RENT      | CCC333       | Anne                 | 2025-12-01   | $0.00        |
+
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+5
+
+=== Available Vehicles ===
+| Type            | Plate        | Make         | Model        | Year   | Status             |
+|--------------------------------------------------------------------------------------------|
+| Car             | AAA111       | Toyota       | Corolla      | 2019   | Available          |
+| Minibus         | BBB222       | Honda        | Civic        | 2021   | Available          |
+| Pickup Truck    | CCC333       | Ford         | Focus        | 2024   | Available          |
+
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+6
+| Type      | Plate        | Customer             | Date         | Amount       |
+|-------------------------------------------------------------------------------|
+| RENT      | AAA111       | George               | 2025-12-01   | $98.78       |
+| RENT      | CCC333       | Anne                 | 2025-12-01   | $140.75      |
+| RENT      | AAA111       | George               | 2025-12-01   | $0.00        |
+| RENT      | CCC333       | Anne                 | 2025-12-01   | $0.00        |
+
+
+1: Add Vehicle
+2: Add Customer
+3: Rent Vehicle
+4: Return Vehicle
+5: Display Available Vehicles
+6: Show Rental History
+0: Exit
+
+0
