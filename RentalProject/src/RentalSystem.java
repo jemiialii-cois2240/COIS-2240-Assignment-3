@@ -354,5 +354,17 @@ public class RentalSystem {
             System.out.println("Error loading rental records: " + e.getMessage());
         }
     }
+    
+    public java.util.List<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public java.util.List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public RentalHistory getRentalHistory() {
+        return rentalHistory;
+    }
 
 }
