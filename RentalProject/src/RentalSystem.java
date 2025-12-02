@@ -63,31 +63,29 @@ public class RentalSystem {
         return true;
     }
 
-    public void rentVehicle(Vehicle vehicle, Customer customer, LocalDate date, double amount) {
-        if (vehicle.getStatus() == Vehicle.VehicleStatus.Available) {
+    public boolean rentVehicle(Vehicle vehicle, Customer customer, LocalDate date, double amount) {
+        if (vehicle.getStatus() == Vehicle.VehicleStatus.Available) {   // adjust enum name if needed
             vehicle.setStatus(Vehicle.VehicleStatus.Rented);
-            RentalRecord record = new RentalRecord(vehicle, customer, date, amount, "RENT");
-            rentalHistory.addRecord(record);
-            saveRecord(record);     //NEW
+            rentalHistory.addRecord(new RentalRecord(vehicle, customer, date, amount, "RENT"));
             System.out.println("Vehicle rented to " + customer.getCustomerName());
-        }
-        else {
+            return true;
+        } else {
             System.out.println("Vehicle is not available for renting.");
+            return false;
         }
     }
 
-    public void returnVehicle(Vehicle vehicle, Customer customer, LocalDate date, double extraFees) {
+    public boolean returnVehicle(Vehicle vehicle, Customer customer, LocalDate date, double extraFees) {
         if (vehicle.getStatus() == Vehicle.VehicleStatus.Rented) {
             vehicle.setStatus(Vehicle.VehicleStatus.Available);
-            RentalRecord record = new RentalRecord(vehicle, customer, date, extraFees, "RENT");
-            rentalHistory.addRecord(record);
-            saveRecord(record);       //NEW
+            rentalHistory.addRecord(new RentalRecord(vehicle, customer, date, extraFees, "RETURN"));
             System.out.println("Vehicle returned by " + customer.getCustomerName());
-        }
-        else {
+            return true;
+        } else {
             System.out.println("Vehicle is not rented.");
+            return false;
         }
-    }    
+    }
 
     public void displayVehicles(Vehicle.VehicleStatus status) {
         // Display appropriate title based on status
@@ -252,28 +250,39 @@ public class RentalSystem {
                 String model = parts[3];
                 int year     = Integer.parseInt(parts[4]);
 
-                Vehicle vehicle;
+                Vehicle vehicle = null;
 
-                // Recreate the right subclass.
-                // We don't have the extra fields (seats, cargo, etc.) in the file,
-                // so we use simple default values that satisfy the constructors.
                 switch (type) {
                     case "Car":
-                        // Car(make, model, year, seats)
-                        vehicle = new Car(make, model, year, 4);
+                        // We don't store seats in the file, so just use a reasonable default
+                        int defaultSeats = 5;
+                        vehicle = new Car(make, model, year, defaultSeats);
                         break;
+
                     case "Minibus":
-                        // Minibus(make, model, year, isAccessible)
-                        vehicle = new Minibus(make, model, year, true);
+                        // We don't store accessibility flag either, default to false
+                        boolean defaultAccessible = false;
+                        vehicle = new Minibus(make, model, year, defaultAccessible);
                         break;
+
                     case "PickupTruck":
-                        // PickupTruck(make, model, year, cargoSize, hasTrailer)
-                        vehicle = new PickupTruck(make, model, year, 0.0, false);
+                        // IMPORTANT: cargoSize must be > 0, or the constructor throws
+                        double defaultCargoSize = 100.0;
+                        boolean defaultHasTrailer = false;
+                        vehicle = new PickupTruck(make, model, year, defaultCargoSize, defaultHasTrailer);
                         break;
+
                     default:
-                        // Fallback: if some type is unknown, just skip it
-                        continue;
+                        // Unknown type – skip this line
+                        break;
                 }
+
+                // common logic: if we created something, set the plate and add to list
+                if (vehicle != null) {
+                    vehicle.setLicensePlate(plate);
+                    vehicles.add(vehicle);
+                }
+
 
                 vehicle.setLicensePlate(plate);
                 vehicles.add(vehicle);
