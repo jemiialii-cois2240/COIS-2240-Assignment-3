@@ -59,15 +59,16 @@ public class VehicleRentalApp {
 		            }
                     
                     if (vehicle != null) {
-                        vehicle.setLicensePlate(plate);
-                        boolean added = rentalSystem.addVehicle(vehicle);
-                        if (added) {
-                            System.out.println("Vehicle added successfully.");
-                        } else {
-                            System.out.println("Vehicle not added (duplicate license plate).");
-                        }
-                    } else {
-                        System.out.println("Vehicle not added successfully.");
+                    	if (vehicle != null) {
+                    	    try {
+                    	        vehicle.setLicensePlate(plate);
+                    	        rentalSystem.addVehicle(vehicle);
+                    	        System.out.println("Vehicle added successfully.");
+                    	    } catch (IllegalArgumentException e) {
+                    	        System.out.println("Error: " + e.getMessage());
+                    	        // do NOT add the vehicle if plate is invalid
+                    	    }
+                    	}
                     }
                     break;
 
@@ -153,5 +154,6 @@ public class VehicleRentalApp {
                     System.exit(0);
             }
         }
-    }
+    
+	}
 }

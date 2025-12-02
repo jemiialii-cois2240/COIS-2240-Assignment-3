@@ -335,7 +335,7 @@ public class RentalSystem {
 
                 // if something is missing, skip this record
                 if (vehicle == null || customer == null) {
-                    continue;
+                    continue; //temporary comment to commit
                 }
 
                 RentalRecord record = new RentalRecord(vehicle, customer, date, amount, type);
